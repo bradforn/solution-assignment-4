@@ -35,7 +35,7 @@ app.get('/notes/:user', function (req, res, next) {
 
   if (userData) {
     res.render('notes-page', {
-      title: 'ToDoIt - ' + req.params.user,
+      title: 'ToDoIt - ' + userData.name,
       notes: userData.notes,
       userName: userData.name
     });
