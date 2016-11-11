@@ -6,12 +6,12 @@ var app = express();
 var usersData = require('./users-data');
 var port = process.env.PORT || 3000;
 
-// Serve static files from public/.
-app.use(express.static(path.join(__dirname, 'public')));
-
 // Use Handlebars as the view engine for the app.
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars');
+
+// Serve static files from public/.
+app.use(express.static(path.join(__dirname, 'public')));
 
 /*
  * Route the root path ('/') to the index page.  Give Handlebars the
