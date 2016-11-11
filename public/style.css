@@ -56,10 +56,19 @@ nav {
   background-color: #444;
 }
 
+.navbar-menu {
+  position: relative;
+}
+
 .navbar-menu-list {
+  position: absolute;
+  left: 0;
+  right: 0;
   display: none;
   padding: 0;
   list-style-type: none;
+  z-index: 10;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.25);
 }
 
 .navbar-menu-list,

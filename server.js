@@ -18,7 +18,7 @@ app.set('view engine', 'handlebars');
  * appropriate page title and data for all users to render.
  */
 app.get('/', function (req, res) {
-  res.render('index', {
+  res.render('index-page', {
     title: 'ToDoIt',
     usersData: usersData
   });
@@ -34,7 +34,7 @@ app.get('/notes/:user', function (req, res, next) {
   var userData = usersData[req.params.user];
 
   if (userData) {
-    res.render('notes', {
+    res.render('notes-page', {
       title: 'ToDoIt - ' + req.params.user,
       notes: userData.notes,
       userName: userData.name
@@ -47,7 +47,7 @@ app.get('/notes/:user', function (req, res, next) {
 
 // Return a 404 and render the 404 page for any other route.
 app.get('*', function (req, res) {
-  res.status(404).render('404', {
+  res.status(404).render('404-page', {
     title: 'ToDoIt'
   });
 });
